@@ -1,0 +1,23 @@
+2. Relaciones entre clases
+
+Enunciado: Para cada uno de los siguientes pares de conceptos, indique si, desde el punto de vista del modelado de software, estos pares deben estar vinculados por una agregación o una composición, y por qué.
+
+1.
+
+Aeropuerto / Avión
+
+2.
+
+Continente / País
+
+3.
+
+Molécula / Átomo
+
+4.
+
+Colmena / Abeja
+
+5.
+
+Muñeca rusa / Muñeca rusa

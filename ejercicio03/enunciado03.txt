@@ -1,0 +1,18 @@
+3. ¿Herencia?
+Enunciado: como en el ejercicio anterior, indicar si utilizar una herencia para representar el vínculo entre los siguientes pares es indicado o no, y por qué.
+
+1.
+
+Planeta/Saturno
+
+2.
+
+Lista/Directorio telefónico
+
+3.
+
+Animal de compañía/Perro
+
+4.
+
+Dos ruedas/Bicicleta

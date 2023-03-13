@@ -1,0 +1,10 @@
+4. Localización de clases
+El administrador de un zoológico necesita una pequeña aplicación para administrar su parque:
+
+“El problema es que tengo dificultades para seguir la asignación de los cuidadores a los animales. Especialmente cuando alguien se va de vacaciones, tengo que prever su sustitución.
+
+Y luego también está la comida. Manejo de stocks de alimentos y distribución a los carnívoros, herbívoros e insectívoros. Hoy, está completamente desordenado, de repente pierdo mucho tiempo alimentando a los animales. ¡Realmente necesito un sistema que me haga la vida más fácil!"
+
+Esta es una descripción puramente de negocio (y ciertamente lejos de la realidad, pero esto es solo un ejemplo). Lo primero que hay que hacer es extraer los conceptos de negocio para poder manejarlos en la aplicación. Estos conceptos se han resaltado en negrita y serán las clases principales del software. 
+
+images/cap2_pag36.png

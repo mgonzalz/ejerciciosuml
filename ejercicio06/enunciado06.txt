@@ -1,0 +1,47 @@
+6. Miembros
+Los actores están en su lugar. Ahora es necesario asignarles sus miembros. Empecemos por los atributos.
+
+La descripción del producto realizada por el cliente no es muy detallada en cuanto a los datos. Por lo tanto, será necesario usar el sentido común para proporcionar el nivel mínimo vital, sin perder tiempo en modelar información que no servirá para nada. De todos modos, antes de iniciar cualquier desarrollo todas estas decisiones deben ser validadas por el cliente, de manera constante.
+
+El zoológico en sí mismo no contiene necesariamente información relevante. Podríamos agregar a la clase que lo representa atributos que indiquen su nombre, dirección, número de teléfono, dirección de correo electrónico, etc. Dicho esto, el administrador de este zoológico utilizará la aplicación. Por un lado, él ya conoce esta información y, por otro lado, esta información es completamente inútil para gestionar cuidadores, animales y comida.
+
+Un cuidador debe poder ser identificado en un horario, por ejemplo, y en consecuencia, se le debe asignar su nombre y apellidos. Uno se podría imaginar agregando un número de Seguro Social en caso de homónimos (elección a discreción del cliente). La lista de animales que cuida también se debe establecer como un atributo. Evidentemente, esta lista será modificable en caso de vacaciones, reasignación, cambio de plantilla, etc.
+
+Unas vacaciones se definen por una fecha de inicio y una duración (también podríamos imaginar una fecha de fin). Para poder encontrar quién las disfrutó, debe estar presente un atributo que haga referencia al empleado en cuestión.
+
+Un animal tiene una dieta, que se define mediante una lista de valores de enumeración. Debe poder identificar de manera única a un animal, lo que puede ser útil si está enfermo o simplemente para asignarle un cuidador. Por tanto, se debe proporcionar un tributo a tal efecto. Dado que en un momento u otro es muy probable que desee mostrar información del animal (en una página web, aplicación móvil o software de "escritorio"), se puede agregar el nombre de la especie del animal, para ayudar con la identificación ("Cuidador Ángel asociado con el animal # 1244" es poco claro, mientras que "Cuidador Ángel asociado con el animal # 1244 (guepardo)", es un poco más explícito y permite visualizar inconsistencias más rápidamente, especialmente si Ángel teme a los felinos).
+
+La reserva de alimentos contiene, por necesidad, instancias de alimentos. Por su naturaleza de stock, estas instancias se deben asociar con un contador de cantidad (kilogramos, toneladas, litros, etc.). Uno podría imaginar agregar atributos estadísticos (velocidad de consumo de tal alimento, frecuencia de compra de ese otro), pero por falta de especificaciones, es contraproducente querer imaginar todos los usos posibles. Será necesario entablar una conversación con el cliente para aclarar esto.
+
+La comida en sí misma no debe contener mucha información, porque su único propósito es ser distribuida a los animales adecuados. Por tanto, se le deben asignar las dietas a las que corresponde, así como un nombre para que, como en el caso de los animales, se puedan leer fácilmente las existencias en una interfaz gráfica.
+
+Esta lista sigue el proceso de pensamiento que un desarrollador podría tener en tal situación. No existe un método riguroso y matemático para establecer la lista de los atributos de un conjunto de clases. O la descripción del negocio que hemos realizado es muy precisa y, por tanto, el trabajo ya está "prestablecido", o está fraccionada. En este caso, solo el sentido común y la intuición pueden hacer avanzar esta primera versión del modelado, mientras se espera un intercambio con el cliente para sacar una segunda.
+
+En este caso, aunque no se sepa completamente cómo funciona un zoológico, una central nuclear o un motor de helicóptero, todavía es posible imaginarlo "ingenuamente" y establecer una lista de atributos en consecuencia.
+
+El diagrama de clases de la aplicación, una vez que se definen los atributos, se parece a lo siguiente:
+
+images/cap2_pag45.png
+
+Los nombres de tipos "básicos" como integer (entero), string (cadena), etc. no se corresponden necesariamente con su nombre real en el lenguaje de desarrollo (en Python, una cadena de caracteres es de tipo str, un entero es de tipo int, etc.). Esto se debe a que es necesario recordar que UML no se ocupa de la implementación, sino de la arquitectura del software y, por lo tanto, el lenguaje de desarrollo no tiene lugar aquí.
+
+Por esta razón describimos los tipos de atributo utilizando términos más "humanos" que de "máquina".
+
+Todos los atributos tienen visibilidad privada. Hacer que la visibilidad de los atributos sea privada es algo bueno en POO. Los descriptores de acceso de estos atributos no se han representado para evitar sobrecargar el esquema.
+
+Ahora es el momento de pasar al comportamiento de estas clases, es decir, sus métodos.
+
+El zoológico, como clase principal y central, tendrá un comportamiento que impactará a las clases que contiene, es decir, los cuidadores, los animales y el stock, así como las relaciones que existen entre ellos. En el contexto del funcionamiento de un zoológico, esta clase actuará como un "jefe" (podríamos haber definido una clase dedicada a la gestión administrativa, pero en la descripción que hace el cliente, esta nueva clase no aporta ningún valor añadido). De esta manera, la asignación de cuidadores a los animales la hará el zoológico, lo que tiene sentido porque esta es la clase que tiene el conocimiento completo de los animales. Por la misma razón, también le corresponde al zoológico decidir si un empleado puede irse de vacaciones o no.
+
+El cuidador, por definición, cuida a los animales y también los alimenta. Dado que le corresponde a él tomar la iniciativa de solicitar las vacaciones, se debe definir un método para tal fin.
+
+Un periodo de vacaciones en sí mismo no tiene comportamiento propio. Es solo una clase "contenedor" que almacena datos relacionados con las vacaciones tomadas por los empleados.
+
+Los animales tienen un papel pasivo en el zoológico: se les alimenta y ya está. 
+
+El stock se encarga de gestionar los alimentos y las cantidades solicitadas. Depende de él asegurarse de que las reservas no estén agotadas y, por qué no, dar una alerta cuando lo estén.
+
+Aquí está la descripción general del diagrama de clases completo de la aplicación de administración del zoológico:
+
+images/cap2_pag47.png
+Este esquema es el resultado de una reflexión "ingenua" basada en la descripción proporcionada por el cliente. En cualquier caso, ni este primer borrador, ni los siguientes, deben grabarse en piedra: los diagramas de clases van a evolucionar con los detalles proporcionados por el cliente, los requisitos técnicos, las refactorizaciones, etc. Cuando el cliente acepta el diagrama, o más normalmente, su explicación, puede servir como base para comenzar el desarrollo. 

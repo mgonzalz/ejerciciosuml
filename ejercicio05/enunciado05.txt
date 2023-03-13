@@ -1,0 +1,50 @@
+5. Contenidos y continentes
+Antes de completar estas clases con sus atributos y métodos, nos vamos a organizar un poco. Instintivamente, aparecen categorías: humanos, animales y logística.
+
+conceptos “humanos”: Zoológico, Vacaciones y Cuidador;
+
+conceptos “animales”: Animal, Carnívoro, Herbívoro e Insectívoro;
+
+los conceptos de "logística": Stock y Comida.
+
+...
+
+Incluso sin conocer perfectamente el negocio, parece que tiene sentido considerar que las vacaciones están asociadas con un cuidador, que un cuidador está asociado con el zoológico, así como con los animales. El stock del zoológico tiene comida, que a su vez está relacionada con la dieta de los animales. Vayamos paso a paso:
+
+Un zoológico acoge a los animales, tiene existencias de comida y emplea cuidadores. ¿Qué tipo de enlace usar aquí: una composición o una agregación? Para orientar esta elección, la técnica siempre es la misma: basta preguntarse si el contenido tiene una razón de ser o existir, si se destruye el contenedor. En este caso, si no hay zoológicos, no hay animales que manejar, ni cuidadores ni stock. Por tanto, es un enlace fuerte, es decir, una composición.
+
+En el caso de los seres vivos, la cardinalidad es la misma: 0..n del zoológico hacia los cuidadores y los animales (un zoológico puede no tener empleados y también puede tener varios; lo mismo para los animales), y 1 en el otro sentido (un cuidador y un animal solo pueden pertenecer a un zoológico, ya que la aplicación solo administra uno). En cuanto al stock, el zoológico solo tiene uno, y el stock solo pertenece a un zoológico (uno podría imaginar un sistema de mutualización de comida si la aplicación administrara varios zoológicos, pero no es el caso aquí).
+
+
+En realidad, los animales y los cuidadores ciertamente seguirán existiendo, pero esta no es una razón válida para elegir una agregación. Así como una habitación no tiene sentido sin una casa, un cuidador no tiene sentido si el zoológico no existe. Ningún zoológico vive sin cuidadores ni animales. Posiblemente podríamos considerar una agregación en el caso de que la aplicación que gestione varios zoológicos, donde un cuidador podría ser trasladado a otro parque y donde un animal sería trasladado unos kilómetros más lejos.
+
+images/cap2_pag37.png
+Se asigna un cuidador a uno o más animales. De hecho, a la pregunta "¿el animal desaparece con el cuidador?", la respuesta aquí es no: si el cuidador deja su trabajo, el animal se queda en el zoológico. Por tanto, es una agregación, una relación débil.
+
+Además, la descripción realizada por el cliente sobre la cardinalidad de esta relación, no es completa. ¿Se asigna un cuidador a un solo animal o a varios? Por tanto, es bueno pedirle una aclaración. Dependiendo de la respuesta, la cardinalidad de esta relación puede variar.
+
+Supongamos que un cuidador puede "poseer" varios animales. Por lo tanto, la cardinalidad de la clase Cuidador hacia la clase Animal es 0..n (podemos imaginar que un cuidador recién contratado aún no tiene un animal bajo su cuidado). ¿Y al revés? ¿Puede un animal ser cuidado por varias personas diferentes? Uno podría imaginarlo, porque si un cuidador se va de vacaciones, parece inaceptable dejar a un animal sin cuidados. Por tanto, supongamos que la cardinalidad es 1..n (no 0..n porque podemos suponer que no dejamos un animal sin cuidados). Todos estos supuestos se deben enviar al patrocinador del software para transformarlos en funcionalidades validadas.
+
+images/cap2_pag39.png
+Un cuidador se toma vacaciones, pero ¿se debe liberar el área de memoria que ocupa cuando se elimina al cuidador? Por un lado, si el cuidador dimite, sus vacaciones ya no tienen ningún significado real ya que el empleado ya no trabaja en la empresa. Sin embargo, por motivos contables, puede resultar útil realizar un seguimiento de estos días festivos. Las dos propuestas son iguales y solo el cliente del software podrá responder. Para este ejemplo, supongamos que las vacaciones no tienen por qué ser permanentes y, por lo tanto, pueden desaparecer con quien las disfrutó.
+
+images/cap2_pag39_b.png
+En este tipo de situación en la que surge un dilema, es mejor hacer una pregunta abierta al cliente sin comunicar inmediatamente las posibilidades. Si la persona para quien está escrito el software tiene una respuesta clara y segura, entonces el dilema está resuelto. Pero a menudo no es el caso, y además sucede que esta persona no ha visto las cosas desde este ángulo y necesita pensar en ello, o incluso ignora por completo la dirección a tomar. En este caso, hacer sugerencias puede ser útil para, quizás, sacar una idea o un recuerdo que pueda resolver el problema.
+
+Si, a pesar de ello, no hay respuesta y el proyecto debe avanzar, entonces es mejor optar por la solución que cubra el mayor número de casos, según la filosofía "quien puede lo más, puede lo menos".
+
+Pero ojo, esto no es motivo para complicar demasiado el proyecto y planificar absolutamente todas las posibilidades. Es necesario encontrar un equilibrio entre tomarse el tiempo para hacer que el software sea fácilmente escalable y complementar las funcionalidades para entregar el proyecto a tiempo.
+
+El cliente describió tres dietas diferentes: carnívoro, herbívoro, insectívoro. Por cierto, aquí hay una palabra clave interesante: dieta. Este concepto permite generalizar los tres regímenes mencionados por el cliente, lo que posteriormente podría permitir agregar otros sin modificar en profundidad la arquitectura del software. Insectívoro, carnívoro y herbívoro son dietas: por tanto, una relación de herencia las vincula. Por definición, una dieta está estrechamente relacionada con la comida. Lo que come un animal depende de su dieta. Así, podemos considerar la dieta como el intermediario entre el animal y su alimento.
+
+Dado que la simplicidad es un gran consejero, en lugar de crear clases y vincularlas por herencia, pensemos en otra solución: la enumeración. Una enumeración Dieta que contiene los valores Herbívoro, Carnívoro e Insectívoro. Un animal tendría un atributo de este tipo, y cada alimento también, para poder adecuarlos: tal animal cuya dieta es x puede comer tal comida adaptada a la misma dieta x. Pero, ¿no limita esto a un animal a tener una sola dieta? Hay omnívoros que comen plantas y carne. ¿Deberíamos entonces agregar "omnívoro" como valor a la enumeración? El inconveniente de esta solución es que pierde modularidad en la gestión de las dietas. De hecho, si "omnívoro" corresponde a la unión de herbívoros y carnívoros, ¿qué pasa con los herbívoros-insectívoros? ¿Qué pasa con los carnívoros-insectívoros? Agregar un valor de enumeración por combinación sería difícil de mantener dadas las diferentes combinaciones posibles. Aquí solo hay tres, pero si alguna vez aparece una cuarta…
+
+Es preferible establecer una arquitectura lógicamente sólida que buscar soluciones aceptables solo porque, en un caso concreto, "sucede". Entonces, en lugar de un solo valor enumerado, a los animales y las comidas se les asignará una lista de esos valores.
+
+images/cap2_pag41.png
+Se acaba de dar un primer paso en el modelado del proyecto: saber qué contiene qué. Este es un paso importante porque da una descripción general de la importancia de las clases dentro del software. Cuanto más central sea una clase en las relaciones, más crítica será, por lo que será necesario prestarle una atención particular durante su implementación.
+
+images/cap2_pag42.png
+Aquí, podemos ver que la clase Zoo es muy central, porque es la que contendrá las instancias de Cuidador, Animal y Stock. Por tanto, es a ella a quien será necesario solicitar información relativa a estas tres clases (¿quién es el cuidador asociado con tal o cual animal? ¿Estará de vacaciones en tal o cual fecha? ¿Cuál es la previsión de stock en 15 días? etc.).
+
+Solo con las agregaciones y composiciones, podemos ver que el diseño del software ya está dando un buen giro. Los conceptos de negocio descritos por el cliente están relacionados entre sí de forma lógica e intuitiva, cada uno con responsabilidad funcional.
