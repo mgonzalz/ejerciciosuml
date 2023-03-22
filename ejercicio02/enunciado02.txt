@@ -1,23 +1,22 @@
-2. Relaciones entre clases
+# EJERCICIO 2: Relaciones entre clases  
+Para cada uno de los siguientes pares de conceptos, indique si, desde el punto de vista del modelado de software, estos pares deben estar vinculados por una agregación o una composición, y por qué.  
 
-Enunciado: Para cada uno de los siguientes pares de conceptos, indique si, desde el punto de vista del modelado de software, estos pares deben estar vinculados por una agregación o una composición, y por qué.
+1.- Aeropuerto / Avión: AGREGACIÓN: 
+- un avión no pertenece a un aeropuerto, pertenece a una aerolínea y para en aeropuertos para recoger pasajeros. De hecho, un avión (id: matrícula) puede usarse para otra ruta y entonces para en otros aeropuertos.
+- la destrucción de un aeropuerto no supone la destrucción de todos los aviones del aeropuerto, los que no se encuentren en ese momento en tierra, no se destruirían.
+- el aeropuerto puede no tener aviones, y puede seguir existiendo, puede ser un aeropuerto de avionetas, jets guerra, coches voladores ...
 
-1.
+2.- Continente / País: COMPOSICIÓN
+- un continente no “comparte” países con otros continentes, un país solo pertenece a un continente.
+-	la destrucción de un continente supone la desaparición de los países que lo componen.
 
-Aeropuerto / Avión
+3.- Molécula / Átomo: AGREGACIÓN 
+Los átomos pueden existir independientemente de la existencia de la existencia de lo molécula. Los átomos no tienen por qué destruirse al destruir la molécula (pueden romperse los enlaces por ejemplo).
 
-2.
+4.- Colmena (entendido como comunidad de abejas) / Abeja: COMPOSICIÓN
+-	Las colmenas no comparten abejas, una abeja pertenece a solo una colmena (a la vez).
+-	la destrucción de la colmena supone la destrucción de todas las abejas que la componen.
 
-Continente / País
+5.- Muñeca rusa / Muñeca rusa: COMPOSICION
+Una muñeca rusa más pequeña no puede existir independientemente de de la muñeca rusa más grande, Además la destrucción de una muñeca rusa, supone la destrucción de todas las muñecas rusas más pequeñas que lleva dentro.
 
-3.
-
-Molécula / Átomo
-
-4.
-
-Colmena / Abeja
-
-5.
-
-Muñeca rusa / Muñeca rusa
