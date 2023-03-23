@@ -1,18 +1,19 @@
-3. ¿Herencia?
-Enunciado: como en el ejercicio anterior, indicar si utilizar una herencia para representar el vínculo entre los siguientes pares es indicado o no, y por qué.
+# EJERCICIO 3: ¿Herencia?
 
-1.
+Enunciado: Como en el ejercicio anterior, indicar si utilizar una herencia para representar el vínculo entre los siguientes pares es indicado o no, y por qué.
 
-Planeta/Saturno
+1.- Planeta/Saturno
 
-2.
+Se puede establecer una relación de herencia ya que hay una dependencia jerárquica. Los atributos establecidos en la clase "madre", se pueden atribuir a Saturno como podría ser: masa, radio.... Se trata de una relación de "es un".
 
-Lista/Directorio telefónico
+2.-Lista/Directorio telefónico
 
-3.
+No se puede establecer una relación de herencia. Ambas se tratan de una lista de elementos. Sin embargo, una lista contiene cadenas de texto, números, entre otros y un directorio telefónico se trata de una lista de contactos con datos específicos como pueden ser nombre, teléfono, entro otros.
 
-Animal de compañía/Perro
+3.-Animal de compañía/Perro
 
-4.
+Se puede establecer una relación de herencia. Un perro se trata de un animal de compañía y puede adquirir los atributos/métodos de la clase "madre", que sería animal de compañia. Un ejemplo, en animal de compañia podemos encontrar los siguientes atributos: nombre, raza, edad. Estos se atribuirían a la clase hija perro y ahí se especificaría mas, como por ejemplo añadir la raza.
 
-Dos ruedas/Bicicleta
+4.-Dos ruedas/Bicicleta
+
+No se puede establecer una relacion de herencia aunque la rueda sea parte de una bicicleta debido a que según el criterio de "es un", una rueda no es una bicicleta y una bicicleta no es una rueda. Los atributos de bicicleta no son congruentes con los de rueda y viceversa.
