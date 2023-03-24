@@ -1,70 +1,70 @@
 <mxfile host="65bd71144e">
     <diagram id="mnbgLwTyspXb-Ak-Kv7s" name="Page-1">
-        <mxGraphModel dx="790" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="576" dy="424" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="6" value="Planeta" style="html=1;" vertex="1" parent="1">
+                <mxCell id="6" value="Planeta" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="40" y="40" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="Saturno" style="html=1;" vertex="1" parent="1">
+                <mxCell id="7" value="Saturno" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="40" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Directorio de teléfono" style="html=1;" vertex="1" parent="1">
+                <mxCell id="10" value="Directorio de teléfono" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="120" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="Perro" style="html=1;" vertex="1" parent="1">
+                <mxCell id="11" value="Perro" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="200" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Lista" style="html=1;" vertex="1" parent="1">
+                <mxCell id="12" value="Lista" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="40" y="120" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Animal de compañía" style="html=1;" vertex="1" parent="1">
+                <mxCell id="13" value="Animal de compañía" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="40" y="200" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Rueda" style="html=1;" vertex="1" parent="1">
+                <mxCell id="15" value="Rueda" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="40" y="280" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="Bicicleta" style="html=1;" vertex="1" parent="1">
+                <mxCell id="16" value="Bicicleta" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="280" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" vertex="1" parent="1">
+                <mxCell id="27" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" parent="1" vertex="1">
                     <mxGeometry x="160" y="215" width="10" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="11">
+                <mxCell id="28" value="" style="endArrow=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="11" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="80" y="140" as="sourcePoint"/>
                         <mxPoint x="170" y="220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" vertex="1" parent="1">
+                <mxCell id="38" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" parent="1" vertex="1">
                     <mxGeometry x="160" y="55" width="10" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="39" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="7">
+                <mxCell id="39" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="7" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="170" y="60" as="sourcePoint"/>
                         <mxPoint x="430" y="130" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="42" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Se podría&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="42" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Se podría&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="440" y="40" width="300" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="No sería apropiado. Podría considerarse una relación de asociación" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+                <mxCell id="44" value="No sería apropiado. Podría considerarse una relación de asociación" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
                     <mxGeometry x="440" y="120" width="300" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="45" value="No sería apropiado, en su lugar se podría establcer una relación de agregación" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+                <mxCell id="45" value="No sería apropiado, en su lugar se podría establcer una relación de agregación" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
                     <mxGeometry x="440" y="280" width="300" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontSize=10;" vertex="1" parent="1">
+                <mxCell id="48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontSize=10;" parent="1" vertex="1">
                     <mxGeometry x="160" y="136" width="160" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="15" target="16">
+                <mxCell id="50" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="15" target="16" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="320" y="240" as="sourcePoint"/>
                         <mxPoint x="470" y="240" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="51" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Se podría&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="51" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Se podría&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="440" y="200" width="300" height="40" as="geometry"/>
                 </mxCell>
             </root>
