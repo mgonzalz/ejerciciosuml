@@ -2,6 +2,8 @@
 
 LINK REPOSITORIO: https://github.com/mgonzalz/ejerciciosuml.git
 
+Grupo compuesto por Lidia Velicia, Ana García, Jone Vega del Río, Lucia Mielgo y María González
+
 **1. Clase simple**
 Enunciado: modelar una clase para la que queremos que pueda recibir una lista de objetos cualesquiera, para poder recuperar posteriormente su longitud (el número de objetos en la lista). El esquema debe enumerar explícitamente todos los miembros necesarios.
 
